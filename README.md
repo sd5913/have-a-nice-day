@@ -46,3 +46,5 @@ Allow camera access when prompted. Press **Q** to close the test window.
 
 - Chang Shu- Hide And Seek 
 - Li Xinyang- Little Cat Chef
+- Lin Tianmiao- Catch Fish
+- Lindes- Ball Rally
