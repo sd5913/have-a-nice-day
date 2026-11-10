@@ -44,5 +44,5 @@ Allow camera access when prompted. Press **Q** to close the test window.
 
 ## Team
 
-Chang Shu- Hide And Seek 
-Li Xinyang- Little Cat Chef
+-Chang Shu- Hide And Seek 
+-Li Xinyang- Little Cat Chef
