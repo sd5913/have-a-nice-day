@@ -1,0 +1,4 @@
+# Proposed reproducible environment: Python 3.11 (fresh install not verified here).
+mediapipe==0.10.21
+opencv-contrib-python==4.11.0.86
+numpy==1.26.4
