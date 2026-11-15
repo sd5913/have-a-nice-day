@@ -1,7 +1,6 @@
 # Shared hand input
 
-Public utilities for all four games. No Little Cat Chef rules or game artwork are included.
-Extends Cshushs1's existing GestureTracker from commit 865a9bb, with Codex assistance.
+Shared hand tracking for the four mini-games. Detects hand position, pinching and release, with smoothing and recovery when tracking is lost. Each game can use these inputs for its own controls, such as dragging ingredients, moving covers or steering a basket.
 
 ## Setup
 
@@ -67,3 +66,7 @@ The student reported successful food pinch/drag in the separate chef prototype. 
 camera run and other machines/lighting are not verified. The agent's restricted execution
 could not initialize the macOS graphics service; this is not proof of the student's runtime failure.
 Ask teammates to test the shared demo and record actual machine/camera observations.
+
+## Credits
+
+Based on the team’s existing GestureTracker by Cshushs1, with coding assistance from Codex.
