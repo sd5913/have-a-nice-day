@@ -18,7 +18,7 @@ class ChefTests(unittest.TestCase):
         for name in g.recipe: self.add(g,f,name)
         self.click(g,f); self.assertEqual(g.stage,'stir')
         for i in range(160):
-            a=i*.1; g.update(f.update(.55+.1*cos(a),.72+.1*sin(a),True,source='mouse'),.02)
+            a=i*.1; g.update(f.update(g.bowl[0]+.1*cos(a),g.bowl[1]+.1*sin(a),True,source='mouse'),.02)
         self.assertEqual(g.stage,'ready')
         self.click(g,f); self.assertEqual(g.stage,'approach')
         for i in range(50): g.update(f.update(.4,.5,False,source='mouse'),.1)

@@ -31,8 +31,9 @@ class ChefGame:
     def __init__(self,round_index=0,affection=0):
         self.affection=affection
         self.round_index=round_index; self.recipe=self.recipes[round_index%len(self.recipes)]
-        self.items={n:DragObject(.10+(i%4)*.205,.33+(i//4)*.18,.065) for i,n in enumerate(self.names)}
-        self.bowl=(.55,.72); self.added=[]; self.stage='ingredients'
+        positions=((.18,.26),(.18,.40),(.822,.505),(.146,.535),(.38,.505),(.236,.535),(.714,.505),(.825,.56))
+        self.items={n:DragObject(*pos,.052) for n,pos in zip(self.names,positions)}
+        self.bowl=(.563,.421); self.added=[]; self.stage='ingredients'
         self.stir=CircleStir(self.bowl,2); self.held=None
         self.message='Cat wants: '+', '.join(self.recipe)
         self.elapsed=0.; self.stage_time=0.; self.reaction=''; self.correct=False

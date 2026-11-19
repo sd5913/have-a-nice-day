@@ -18,6 +18,19 @@ class Visuals:
                     self.images[name]=pic
                 else: warnings.warn(f'Cannot read {path}; using placeholder')
 
+        # The generated sheet uses eight equal cells. Treat each cell as a sprite.
+        sheet_path=self.root/'ingredients.png'
+        if sheet_path.is_file():
+            sheet=cv2.imdecode(np.fromfile(str(sheet_path),dtype=np.uint8),cv2.IMREAD_UNCHANGED)
+            if sheet is not None and sheet.ndim==3 and sheet.shape[2]==4:
+                sh,sw=sheet.shape[:2]
+                names=('fish','chicken','kibble','pumpkin','carrot','peas','rice','salmon')
+                for i,name in enumerate(names):
+                    cell=sheet[(i//4)*sh//2:((i//4)+1)*sh//2,(i%4)*sw//4:((i%4)+1)*sw//4]
+                    yy,xx=np.where(cell[:,:,3]>64)
+                    if len(xx):
+                        self.images['ingredient_'+name]=cell[max(0,yy.min()-4):yy.max()+5,max(0,xx.min()-4):xx.max()+5].copy()
+
     def background(self,w,h):
         out=np.full((h,w,3),(240,247,250),dtype=np.uint8)
         if 'background' in self.images:
